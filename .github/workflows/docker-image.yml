@@ -18,7 +18,8 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
       with:
-        AWS_REGION: us-east-2
+        aws-region: us-east-2
+        mask-password: 'true'
 
     - name: Build, tage, and push image to Amazon ECR
       run: |
