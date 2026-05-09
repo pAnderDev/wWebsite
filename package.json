@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@aws-amplify/backend": "^1.22.0",
     "@babel/plugin-transform-private-methods": "^7.24.7"
   }
 }

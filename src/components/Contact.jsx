@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { defineAuth, secret } from '@aws-amplify/backend';
 import './Contact.css';
 
 const Contact = () => {
@@ -24,9 +23,16 @@ const Contact = () => {
     setSending(true);
     setStatusMessage('');
 
+    const accessKey = process.env.REACT_APP_FORM_SUBMISSION_KEY;
+    if (!accessKey) {
+      setStatusMessage('Form submission key is not configured.');
+      setSending(false);
+      return;
+    }
+
     const payload = {
       ...formData,
-      access_key: process.env.REACT_APP_FORM_SUBMISSION_KEY
+      access_key: accessKey
     };
 
     try {
@@ -111,6 +117,5 @@ const Contact = () => {
     </section>
   );
 };
-
 
 export default Contact;
