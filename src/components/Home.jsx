@@ -1,12 +1,15 @@
 import React from 'react';
+import './Home.css';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Welcome to Williams Website</h1>
-      <p>Professional bookkeeping services to help you manage your finances efficiently.</p>
-      <p>Qualifications.</p>
-    </div>
+    <section className="home">
+      <div className="hero">
+        <h1>Welcome to Mercury Accounting</h1>
+        <p>Trusted financial expertise for individuals and businesses. We provide comprehensive accounting services to help you achieve your financial goals.</p>
+        <button className="cta-button">Get Started</button>
+      </div>
+    </section>
   );
 };
 
